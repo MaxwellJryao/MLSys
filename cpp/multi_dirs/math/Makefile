@@ -57,10 +57,10 @@ RM = /scratch/jiarui14/miniconda3/envs/vllm/lib/python3.10/site-packages/cmake/d
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /shared/storage-01/jiarui14/dev/mlsys/cpp/hello_world
+CMAKE_SOURCE_DIR = /shared/storage-01/jiarui14/dev/mlsys/cpp/multi_dirs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /shared/storage-01/jiarui14/dev/mlsys/cpp/hello_world
+CMAKE_BINARY_DIR = /shared/storage-01/jiarui14/dev/mlsys/cpp/multi_dirs
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /shared/storage-01/jiarui14/dev/mlsys/cpp/hello_world/CMakeFiles /shared/storage-01/jiarui14/dev/mlsys/cpp/hello_world//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /shared/storage-01/jiarui14/dev/mlsys/cpp/hello_world/CMakeFiles 0
+	cd /shared/storage-01/jiarui14/dev/mlsys/cpp/multi_dirs && $(CMAKE_COMMAND) -E cmake_progress_start /shared/storage-01/jiarui14/dev/mlsys/cpp/multi_dirs/CMakeFiles /shared/storage-01/jiarui14/dev/mlsys/cpp/multi_dirs/math//CMakeFiles/progress.marks
+	cd /shared/storage-01/jiarui14/dev/mlsys/cpp/multi_dirs && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 math/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /shared/storage-01/jiarui14/dev/mlsys/cpp/multi_dirs/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
+	cd /shared/storage-01/jiarui14/dev/mlsys/cpp/multi_dirs && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 math/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,55 +103,56 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /shared/storage-01/jiarui14/dev/mlsys/cpp/multi_dirs && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 math/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /shared/storage-01/jiarui14/dev/mlsys/cpp/multi_dirs && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 math/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /shared/storage-01/jiarui14/dev/mlsys/cpp/multi_dirs && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named HelloWorld
+# Convenience name for target.
+math/CMakeFiles/MathFunctions.dir/rule:
+	cd /shared/storage-01/jiarui14/dev/mlsys/cpp/multi_dirs && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 math/CMakeFiles/MathFunctions.dir/rule
+.PHONY : math/CMakeFiles/MathFunctions.dir/rule
 
-# Build rule for target.
-HelloWorld: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 HelloWorld
-.PHONY : HelloWorld
+# Convenience name for target.
+MathFunctions: math/CMakeFiles/MathFunctions.dir/rule
+.PHONY : MathFunctions
 
 # fast build rule for target.
-HelloWorld/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HelloWorld.dir/build.make CMakeFiles/HelloWorld.dir/build
-.PHONY : HelloWorld/fast
+MathFunctions/fast:
+	cd /shared/storage-01/jiarui14/dev/mlsys/cpp/multi_dirs && $(MAKE) $(MAKESILENT) -f math/CMakeFiles/MathFunctions.dir/build.make math/CMakeFiles/MathFunctions.dir/build
+.PHONY : MathFunctions/fast
 
-hello_world.o: hello_world.cpp.o
-.PHONY : hello_world.o
+MathFunctions.o: MathFunctions.cc.o
+.PHONY : MathFunctions.o
 
 # target to build an object file
-hello_world.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HelloWorld.dir/build.make CMakeFiles/HelloWorld.dir/hello_world.cpp.o
-.PHONY : hello_world.cpp.o
+MathFunctions.cc.o:
+	cd /shared/storage-01/jiarui14/dev/mlsys/cpp/multi_dirs && $(MAKE) $(MAKESILENT) -f math/CMakeFiles/MathFunctions.dir/build.make math/CMakeFiles/MathFunctions.dir/MathFunctions.cc.o
+.PHONY : MathFunctions.cc.o
 
-hello_world.i: hello_world.cpp.i
-.PHONY : hello_world.i
+MathFunctions.i: MathFunctions.cc.i
+.PHONY : MathFunctions.i
 
 # target to preprocess a source file
-hello_world.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HelloWorld.dir/build.make CMakeFiles/HelloWorld.dir/hello_world.cpp.i
-.PHONY : hello_world.cpp.i
+MathFunctions.cc.i:
+	cd /shared/storage-01/jiarui14/dev/mlsys/cpp/multi_dirs && $(MAKE) $(MAKESILENT) -f math/CMakeFiles/MathFunctions.dir/build.make math/CMakeFiles/MathFunctions.dir/MathFunctions.cc.i
+.PHONY : MathFunctions.cc.i
 
-hello_world.s: hello_world.cpp.s
-.PHONY : hello_world.s
+MathFunctions.s: MathFunctions.cc.s
+.PHONY : MathFunctions.s
 
 # target to generate assembly for a file
-hello_world.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HelloWorld.dir/build.make CMakeFiles/HelloWorld.dir/hello_world.cpp.s
-.PHONY : hello_world.cpp.s
+MathFunctions.cc.s:
+	cd /shared/storage-01/jiarui14/dev/mlsys/cpp/multi_dirs && $(MAKE) $(MAKESILENT) -f math/CMakeFiles/MathFunctions.dir/build.make math/CMakeFiles/MathFunctions.dir/MathFunctions.cc.s
+.PHONY : MathFunctions.cc.s
 
 # Help Target
 help:
@@ -161,10 +162,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... HelloWorld"
-	@echo "... hello_world.o"
-	@echo "... hello_world.i"
-	@echo "... hello_world.s"
+	@echo "... MathFunctions"
+	@echo "... MathFunctions.o"
+	@echo "... MathFunctions.i"
+	@echo "... MathFunctions.s"
 .PHONY : help
 
 
@@ -176,6 +177,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /shared/storage-01/jiarui14/dev/mlsys/cpp/multi_dirs && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -57,10 +57,10 @@ RM = /scratch/jiarui14/miniconda3/envs/vllm/lib/python3.10/site-packages/cmake/d
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /shared/storage-01/jiarui14/dev/mlsys/cpp/hello_world
+CMAKE_SOURCE_DIR = /shared/storage-01/jiarui14/dev/mlsys/cpp/multi_dirs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /shared/storage-01/jiarui14/dev/mlsys/cpp/hello_world
+CMAKE_BINARY_DIR = /shared/storage-01/jiarui14/dev/mlsys/cpp/multi_dirs
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /shared/storage-01/jiarui14/dev/mlsys/cpp/hello_world/CMakeFiles /shared/storage-01/jiarui14/dev/mlsys/cpp/hello_world//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /shared/storage-01/jiarui14/dev/mlsys/cpp/multi_dirs/CMakeFiles /shared/storage-01/jiarui14/dev/mlsys/cpp/multi_dirs//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /shared/storage-01/jiarui14/dev/mlsys/cpp/hello_world/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /shared/storage-01/jiarui14/dev/mlsys/cpp/multi_dirs/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,41 +117,54 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named HelloWorld
+# Target rules for targets named MultiDirs
 
 # Build rule for target.
-HelloWorld: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 HelloWorld
-.PHONY : HelloWorld
+MultiDirs: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MultiDirs
+.PHONY : MultiDirs
 
 # fast build rule for target.
-HelloWorld/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HelloWorld.dir/build.make CMakeFiles/HelloWorld.dir/build
-.PHONY : HelloWorld/fast
+MultiDirs/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MultiDirs.dir/build.make CMakeFiles/MultiDirs.dir/build
+.PHONY : MultiDirs/fast
 
-hello_world.o: hello_world.cpp.o
-.PHONY : hello_world.o
+#=============================================================================
+# Target rules for targets named MathFunctions
+
+# Build rule for target.
+MathFunctions: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MathFunctions
+.PHONY : MathFunctions
+
+# fast build rule for target.
+MathFunctions/fast:
+	$(MAKE) $(MAKESILENT) -f math/CMakeFiles/MathFunctions.dir/build.make math/CMakeFiles/MathFunctions.dir/build
+.PHONY : MathFunctions/fast
+
+main.o: main.cc.o
+.PHONY : main.o
 
 # target to build an object file
-hello_world.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HelloWorld.dir/build.make CMakeFiles/HelloWorld.dir/hello_world.cpp.o
-.PHONY : hello_world.cpp.o
+main.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MultiDirs.dir/build.make CMakeFiles/MultiDirs.dir/main.cc.o
+.PHONY : main.cc.o
 
-hello_world.i: hello_world.cpp.i
-.PHONY : hello_world.i
+main.i: main.cc.i
+.PHONY : main.i
 
 # target to preprocess a source file
-hello_world.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HelloWorld.dir/build.make CMakeFiles/HelloWorld.dir/hello_world.cpp.i
-.PHONY : hello_world.cpp.i
+main.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MultiDirs.dir/build.make CMakeFiles/MultiDirs.dir/main.cc.i
+.PHONY : main.cc.i
 
-hello_world.s: hello_world.cpp.s
-.PHONY : hello_world.s
+main.s: main.cc.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-hello_world.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HelloWorld.dir/build.make CMakeFiles/HelloWorld.dir/hello_world.cpp.s
-.PHONY : hello_world.cpp.s
+main.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MultiDirs.dir/build.make CMakeFiles/MultiDirs.dir/main.cc.s
+.PHONY : main.cc.s
 
 # Help Target
 help:
@@ -161,10 +174,11 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... HelloWorld"
-	@echo "... hello_world.o"
-	@echo "... hello_world.i"
-	@echo "... hello_world.s"
+	@echo "... MathFunctions"
+	@echo "... MultiDirs"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 
